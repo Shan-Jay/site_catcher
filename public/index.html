@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Generator - Create HTML Templates from Websites</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎨 Template Generator</h1>
+            <p>Transform any website into a clean HTML template</p>
+        </header>
+
+        <div class="content">
+            <div class="input-section">
+                <form id="urlForm" class="form">
+                    <div class="form-group">
+                        <label for="urlInput">Enter Website URL:</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="urlInput" 
+                                placeholder="https://example.com or example.com" 
+                                required
+                            >
+                            <button type="submit" class="btn btn-primary" id="generateBtn">
+                                Generate Template
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing website and generating template...</p>
+                </div>
+                <div id="error" class="alert alert-error hidden"></div>
+                <div id="success" class="alert alert-success hidden"></div>
+            </div>
+
+            <!-- Template Output Section -->
+            <div id="outputSection" class="output-section hidden">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="preview">Preview</button>
+                    <button class="tab-btn" data-tab="code">HTML Code</button>
+                    <button class="tab-btn" data-tab="assets">Assets</button>
+                </div>
+
+                <!-- Preview Tab -->
+                <div id="preview" class="tab-content active">
+                    <div class="preview-container">
+                        <iframe id="templatePreview" title="Template Preview"></iframe>
+                    </div>
+                </div>
+
+                <!-- Code Tab -->
+                <div id="code" class="tab-content">
+                    <div class="code-header">
+                        <button class="btn btn-secondary" id="copyBtn">
+                            📋 Copy to Clipboard
+                        </button>
+                        <button class="btn btn-secondary" id="downloadBtn">
+                            💾 Download HTML
+                        </button>
+                    </div>
+                    <pre id="codeDisplay"><code></code></pre>
+                </div>
+
+                <!-- Assets Tab -->
+                <div id="assets" class="tab-content">
+                    <div id="assetsList" class="assets-list"></div>
+                </div>
+
+                <button class="btn btn-outline" id="resetBtn">Generate Another Template</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Powered by <strong>D3 Solutions</strong> | <a href="https://github.com/Shan-Jay" target="_blank" rel="noopener noreferrer">See More</a></p>
+            <p style="font-size: 0.9em; opacity: 0.8;">Created By Shan Jay | V.1.0001 </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
